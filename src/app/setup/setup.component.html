@@ -1,0 +1,9 @@
+<!--setupista nimi tulisi siirtää routes komponenttiin, tallennetaan digitransit servicessä olevaan muuttujaan-->
+
+<h1>Kirjoita pysäkin nimi</h1>
+<input [(ngModel)]="digitransitService.pysakki">
+<button (click)="naytaPysakki()">Hae</button> <!--viittaa setup.components tiedostoon -->
+
+<p>
+  {{digitransitService.pysakki}}
+</p>
