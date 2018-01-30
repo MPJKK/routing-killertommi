@@ -10,6 +10,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import {HttpClientModule} from '@angular/common/http';
 import {DigitransitService} from './services/digitransit.service';
 import {FormsModule} from '@angular/forms';
+import {AgmCoreModule} from '@agm/core';
 
 
 @NgModule({
@@ -24,6 +25,9 @@ import {FormsModule} from '@angular/forms';
     AppRoutingModule,
       HttpClientModule,
       FormsModule,
+      AgmCoreModule.forRoot({
+          apiKey: 'AIzaSyC0nJCFe4JQqSuOP0BsYyBsTYXXzLZsDUM'  // GOOGLE MAPS API KEY
+      })
   ],
   providers: [DigitransitService],
   bootstrap: [AppComponent]

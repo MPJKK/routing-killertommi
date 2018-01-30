@@ -18,9 +18,10 @@ export class RoutesComponent implements OnInit {
     ngOnInit() {
         this.digitransitService.getRoutes().subscribe( response => {
             console.log(response.data['stops'] [0].patterns);
-            this.reittiTaulukko = (response.data['stops'][0].patterns);
-            this.lat = response.data['stops'][0].lat;
-            this.lon = response.data['stops'][0].lon;
+            this.reittiTaulukko = (response.data['stops']);
+
+            // this.lat = response.data['stops'][0].lat;
+            // this.lon = response.data['stops'][0].lon;
         });
     }
 }
