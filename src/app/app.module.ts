@@ -11,14 +11,18 @@ import {HttpClientModule} from '@angular/common/http';
 import {DigitransitService} from './services/digitransit.service';
 import {FormsModule} from '@angular/forms';
 import {AgmCoreModule} from '@agm/core';
-
+import { RouteDirectionPipe } from './pipes/route-direction.pipe';
+import { PiippuPipe } from './pipes/piippu.pipe';
+ // generoidut komponentit importataan automaattisesti
 
 @NgModule({
   declarations: [
     AppComponent,
     RoutesComponent,
     SetupComponent,
-    TopBarComponent
+    TopBarComponent,
+    RouteDirectionPipe,
+    PiippuPipe  // declaraatiot (julistukset) automaattisesti generoinnin yhteydessä
   ],
   imports: [
     BrowserModule,

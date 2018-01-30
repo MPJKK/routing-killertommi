@@ -1,9 +1,11 @@
+{{ '2018-02-24' | date }} <!--tulosta päivämäärä  | tyyppi-->
+
 <article *ngFor="let pysakki of reittiTaulukko">
   <!--ngforria voi laittaa sisään useammankin-->
 <h2>
   {{ pysakki.name }}
 </h2>
-
+<!-- marker pysäkille-->
 <agm-map [latitude]="pysakki.lat" [longitude]="pysakki.lon">
   <agm-marker [latitude]="pysakki.lat" [longitude]="pysakki.lon"></agm-marker>
 </agm-map>
@@ -11,7 +13,7 @@
 <ul>
   <li *ngFor="let reitti of pysakki.patterns">
     <h4>{{reitti.name}}</h4>
-    <p>{{reitti.route.longName}}</p>
+    <p><span [class]="reitti.directionId | piippu">{{ reitti.directionId | routeDirection }}</span>{{reitti.route.longName}}</p>
   </li>
 </ul>
 </article>
