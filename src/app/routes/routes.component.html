@@ -1,14 +1,31 @@
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-{{ '2018-02-24' | date }} <!--tulosta päivämäärä  | tyyppi-->
 <article *ngFor="let pysakki of reittiTaulukko">
-  <!--ngforria voi laittaa sisään useammankin-->
-<h2 class="headline">
-  {{ pysakki.name }}
-</h2>
-<!-- marker pysäkille-->
-<agm-map [latitude]="pysakki.lat" [longitude]="pysakki.lon">
-  <agm-marker [latitude]="pysakki.lat" [longitude]="pysakki.lon"></agm-marker>
-</agm-map>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h2 class="headline">
+          {{ pysakki.name }}
+        </h2>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div fxLayout="row">  <!-- kuin bootstrapin rivi -->
+      <div fxFlex> <!-- kuin bootstrapin kolumni -->
+        <mat-list>
+          <mat-list-item *ngFor="let reitti of pysakki.patterns">
+            <span [class]="reitti.directionId | piippu">
+              <mat-icon>{{reitti.directionId | routeDirection}}</mat-icon>
+            </span>
+            &nbsp;
+            {{reitti.name}}
+          </mat-list-item>
+        </mat-list>
+      </div>
+      <div fxFlex>
+        <agm-map [latitude]="pysakki.lat" [longitude]="pysakki.lon">
+          <agm-marker [latitude]="pysakki.lat" [longitude]="pysakki.lon"></agm-marker>
+        </agm-map>
+      </div>
+    </div>
 
 <ul>
   <li *ngFor="let reitti of pysakki.patterns">
@@ -16,4 +33,5 @@
     <p><span [class]="reitti.directionId | piippu">{{ reitti.directionId | routeDirection }}</span>{{reitti.route.longName}}</p>
   </li>
 </ul>
+  </mat-expansion-panel>
 </article>
