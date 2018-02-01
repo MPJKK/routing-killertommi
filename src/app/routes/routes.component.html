@@ -1,8 +1,8 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 {{ '2018-02-24' | date }} <!--tulosta päivämäärä  | tyyppi-->
-
 <article *ngFor="let pysakki of reittiTaulukko">
   <!--ngforria voi laittaa sisään useammankin-->
-<h2>
+<h2 class="headline">
   {{ pysakki.name }}
 </h2>
 <!-- marker pysäkille-->

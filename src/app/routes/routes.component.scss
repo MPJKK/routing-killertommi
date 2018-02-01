@@ -10,3 +10,24 @@ agm-map {
 .coming {
   color: green;
 }
+
+.headline {
+  font-size: 190%;
+  font-family: arial;
+  font-weight: lighter;
+  text-align: center;
+}
+
+body {
+  margin: 0 auto;
+  display: flex;
+}
+
+ul {
+  margin: 0 auto;
+  text-align: center;
+  list-style-type: none;
+  padding: 5px;
+  background-color: whitesmoke;
+  width: 80%;
+}
